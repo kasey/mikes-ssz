@@ -14,9 +14,9 @@ import (
 type SubmitBlockRequest struct {
 	Message                *v1.BidTrace
 	ExecutionPayloadHeader *capella.ExecutionPayloadHeader
-	Signature              phase0.BLSSignature `ssz-size:"96"`
-	Transactions           []bellatrix.Transaction
-	Withdrawals            []*capella.Withdrawal
+	Signature              phase0.BLSSignature     `ssz-size:"96"`
+	Transactions           []bellatrix.Transaction `ssz-max:"1048576,1073741824" ssz-size:"?,?"`
+	Withdrawals            []*capella.Withdrawal   `ssz-max:"16"`
 }
 
 // String returns a string version of the structure.

@@ -1,4 +1,4 @@
-module github.com/kasey/mikes-ssz
+module github.com/kasey/mikes-ssz/v2
 
 go 1.20
 
